@@ -46,6 +46,7 @@
     "xml-loader": "^1.0.0"
   },
   "dependencies": {
+    "d3": "^3.5.9",
     "normalize.css": "^3.0.3",
     "underscore": "^1.8.3"
   },

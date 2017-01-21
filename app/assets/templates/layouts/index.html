@@ -22,11 +22,17 @@
   </head>
   <body>
 
-    <div id="content">
-      <div class="title">Hello works!</div>
-      <svg class="svg-icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-social_icon-fb"></use>
-      </svg>
+    <div id="main">
+      <div id="sidebar">
+        <input type="checkbox" checked="checked" id="togglelegend">Legend<br/>
+        <div id="legend"></div>
+      </div>
+      <div id="sequence"></div>
+      <div id="chart">
+        <div id="explanation" style="visibility: hidden;">
+          <span id="percentage"></span>
+        </div>
+      </div>
     </div>
     {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
       <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
