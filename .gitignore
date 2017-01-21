@@ -1,0 +1,8 @@
+/dist/
+/node_modules/
+.idea*
+*.iml
+**/.DS_Store
+.gitignore
+.idea/
+/config/manifest.json
