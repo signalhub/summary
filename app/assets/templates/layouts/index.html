@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="T">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="summary resume about">
+    <meta name="keywords" content="javascript web developer">
+    <meta name="author" content="signalhub">
 
     <title>{%=o.htmlWebpackPlugin.options.title || 'My title'%}</title>
 
     {% for (var css in o.htmlWebpackPlugin.files.css) { %}
       <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
     {% } %}
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
     <!--[if IE]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
@@ -37,14 +37,57 @@
       <div id="sidebar">
         <div id="legend"></div>
       </div>
+      <!--<img src="/assets/images/avatar.png" alt="">-->
+      <!--<img src="https://avatars0.githubusercontent.com/u/3446021?v=3&s=460" alt="">-->
       <div id="chart">
-
         <div class="desc">
           <h2>About me</h2>
           <div class="subscript">I am a front-end developer located in Moscow, Russia.<br>
             I have seven years of professional (and four more years as hobby)
             experience in developing mid to large-scale websites and web-applications
             based on webstandard technologies like HTML5, CSS, JavaScript.</div>
+        </div>
+        <div class="pie"></div>
+        <div class="desc clear full-static">
+          <h2>Expertise & Core Skills</h2>
+          <div class="subscript">
+            <ul>
+              <li>Tooling / Workflow:</li>
+              <ul>
+                <li>Git: Git Flow, GitHub Flow</li>
+                <li>Grunt: Extensive Configuration and custom extensions</li>
+                <li>Gulp: Extensive Configuration</li>
+                <li>npm: Extensive Configuration as a task runner</li>
+                <li>Package Management: npm, bower, git</li>
+              </ul>
+              <li>Tooling / Workflow:</li>
+              <ul>
+                <li>Git: Git Flow, GitHub Flow</li>
+                <li>Webpack: Extensive Configuration</li>
+                <li>Grunt: Extensive Configuration</li>
+                <li>Gulp: Extensive Configuration</li>
+                <li>Package Management: npm, bower, git</li>
+                <li>npm: Extensive Configuration as a task runner</li>
+              </ul>
+              <li>Architecture:</li>
+              <ul>
+                <li>Coding Conventions and Guidelines: HTML, CSS (BEM), JavaScript</li>
+                <li>Agile driven development</li>
+              </ul>
+              <li>Development:</li>
+              <ul>
+                <li>Responsive Development (includes on device remote debugging and testing)</li>
+                <li>Preprocessors: STYLUS, LESS</li>
+                <li>Agile Scrum</li>
+                <li>Agile Kanban</li>
+              </ul>
+              <li>Project Management:</li>
+              <ul>
+                <li>Agile Scrum</li>
+                <li>Agile Kanban</li>
+              </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -128,7 +128,7 @@ module.exports = function(_path) {
                 format: jsonPresent,
             }),
             new HtmlPlugin({
-                title: 'Template',
+                title: 'Signalhub',
                 chunks: ['vendors', 'application'],
                 filename: 'index.html',
                 extraFiles: [],

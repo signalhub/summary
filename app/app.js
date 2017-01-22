@@ -39,7 +39,7 @@ var colors = {
 
 var totalSize = 0;
 
-var vis = d3.select("#chart").append("svg:svg")
+var vis = d3.select("#chart .pie").append("svg:svg")
     .attr("width", width)
     .attr("height", height)
     .append("svg:g")
@@ -83,6 +83,28 @@ function createVisualization(json) {
         .style("visibility", "hidden")
         .on("mouseleave", mouseleave);
 
+    d3.select("#container")
+        .append("clipPath")
+        .attr('id', 'path-logo')
+        .append("circle")
+        .attr("r", "75");
+
+
+    d3.select("#container")
+        .append("circle")
+        .attr("id", "path-circle")
+        .attr("r", "75")
+        .style("fill", "transparent");
+
+    d3.select("#container")
+        .append("svg:image")
+        .attr("xlink:href", "/assets/images/avatar.png")
+        .attr("x", -radius/2)
+        .attr("y", -radius/2)
+        .attr("height", radius)
+        .attr("width", radius)
+        .attr('id', "avatar")
+        .attr("clip-path", "url(#path-logo)");
 
     var path = vis.data([json])
         .selectAll("path")
@@ -138,6 +160,9 @@ function mouseover(d) {
         .text(percentageString)
         .style("visibility", "");
 
+    d3.select("#avatar")
+        .style("visibility", "hidden");
+
     var sequenceArray = getAncestors(d);
     updateBreadcrumbs(sequenceArray, percentageString);
 
@@ -156,6 +181,9 @@ function mouseleave(d) {
     // Hide the breadcrumb trail
     d3.select("#trail")
         .style("visibility", "hidden");
+
+    d3.select("#avatar")
+        .style("visibility", "");
 
     // Deactivate all segments during transition.
     d3.selectAll("path").on("mouseover", null);
@@ -276,10 +304,14 @@ function drawLegend(nodes) {
         })
         .on("mouseover", function (d) {
             d3.select(this.childNodes[0]).style('fill', '#252b31');
+            d3.select(this.childNodes[1]).style('fill', '#A9B7C6');
             mouseover(d);
         })
         .on('mouseleave', function () {
             d3.select(this.childNodes[0]).style('fill', '#313335');
+            d3.select(this.childNodes[1]).style('fill', function (d) {
+                return colors[d.name];
+            });
         });
 
 
@@ -309,8 +341,11 @@ function toggleLegend(checked) {
             return checked ? '0px' : '-130px';
         });
 
-    d3.select("#chart .desc")
+    d3.selectAll("#chart .desc")
         .classed("full", !checked);
+
+    d3.select("#chart .pie")
+        .classed("center", !checked);
 }
 
 function buildHierarchy(csv) {
