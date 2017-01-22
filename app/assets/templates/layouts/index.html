@@ -23,14 +23,28 @@
   <body>
 
     <div id="main">
+      <h1>signalhub</h1>
+      <header>What I can do best</header>
+
+      <div class="wrapper-seq">
+        <div id="sequence"></div>
+      </div>
+      <div class="toggle-btn">
+        <div>Legend</div>
+        <input class="tgl tgl-ios" type="checkbox" id="togglelegend" checked="checked"/>
+        <label class="tgl-btn" for="togglelegend"></label>
+      </div>
       <div id="sidebar">
-        <input type="checkbox" checked="checked" id="togglelegend">Legend<br/>
         <div id="legend"></div>
       </div>
-      <div id="sequence"></div>
       <div id="chart">
-        <div id="explanation" style="visibility: hidden;">
-          <span id="percentage"></span>
+
+        <div class="desc">
+          <h2>About me</h2>
+          <div class="subscript">I am a front-end developer located in Moscow, Russia.<br>
+            I have seven years of professional (and four more years as hobby)
+            experience in developing mid to large-scale websites and web-applications
+            based on webstandard technologies like HTML5, CSS, JavaScript.</div>
         </div>
       </div>
     </div>

@@ -53,8 +53,8 @@ module.exports = function(_path) {
                   presets: ['es2015'],
                 },
             }, {
-                test: /\.tsv$/i,
-                loader: 'file?context=' + appPath + '&name=[path][name].[hash].[ext]',
+                test: /\.csv$/i,
+                loader: 'file?context=' + appPath + '&name=[path][name].[ext]',
             }, {
                 test: /\.xml$/,
                 loader: 'xml-loader',

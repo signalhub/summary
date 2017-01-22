@@ -8,59 +8,184 @@
 	box-sizing border-box
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-family: 'Roboto Light', sans-serif;
+	font-size: 14px;
 	font-weight: 400;
 	background-color: #313335;
+	color: #A9B7C6
 }
 
 #main {
-	float: left;
 	width 100%
+	max-width: 700px;
+	margin 0 auto
 }
 
+h1
+header
+	padding 0 1rem
+
+header
+	font-family "Roboto Light"
+	font-size 1rem
+
 #sidebar {
-	position: absolute;
-	padding: 1rem;
-	top: 0;
-	right: 0;
+	overflow: auto;
+	height: 336px;
+	width: 130px;
+	float left
 	z-index 100
 }
 
+.wrapper-seq
+	margin .5rem 1rem
+	height: 40px;
+	overflow: hidden;
+
 #sequence {
-	width: 150px;
-	height: 70px;
+	width 300px
 }
 
-#legend {
-	padding: 10px 0 0 3px;
-}
+#legend
+	position: absolute;
+	padding: .5rem;
+	height: 100%;
+	left: 0;
+	margin-left: .5rem;
+	.rect-legend
+		cursor pointer
+
 
 #sequence text, #legend text {
 	font-weight: 600;
 	fill: #313335;
 }
 
-#chart {
-	position: relative;
+#chart
+	position: absolute;
 	width: 100%;
-	text-align: center;
-}
+	text-align: right;
+	.desc
+		float: right
+		width 36%
+		text-align: left;
+		margin-left: 1rem;
+		h2
+			font-family 'Roboto'
+
 
 #chart path {
 	stroke: #313335;
 }
 
-#explanation {
-	top: 170px;
-	width: 140px;
-	text-align: center;
-	color: #666;
-	z-index: 100;
-	margin: 0 auto;
-}
-
 #percentage {
 	font-size: 2.5em;
+	display: block
 }
+
+.toggle-btn
+	padding 0 1rem
+	>div
+		margin-right .6rem
+		font-size .9rem
+		display: inline-block;
+		vertical-align: top;
+
+@media (max-width: 500px)
+	#chart
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		.desc
+			float: right;
+			padding: .5rem;
+			width: 60%;
+			text-align: left;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			transition: width  0.5s ease;
+			&.full
+				width 100%
+				padding: .5rem 1rem 1rem;
+
+
+.tgl
+	display: none;
+
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+	box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+	background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+	background: none;
+}
+.tgl + .tgl-btn {
+	outline: 0;
+	display: block;
+	width: 2.9em;
+	height: 1.6em;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+	position: relative;
+	display: block;
+	content: "";
+	width: 50%;
+	height: 100%;
+}
+.tgl + .tgl-btn:after {
+	left: 0;
+}
+.tgl + .tgl-btn:before {
+	display: none;
+}
+.tgl:checked + .tgl-btn:after {
+	left: 50%;
+}
+
+.tgl-ios + .tgl-btn {
+	background: #fbfbfb;
+	border-radius: 2em;
+	padding: 2px;
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+	border: 1px solid #e8eae9;
+	display: inline-block;
+	vertical-align: top;
+}
+.tgl-ios + .tgl-btn:after {
+	border-radius: 2em;
+	background: #fbfbfb;
+	-webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+	transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.tgl-ios + .tgl-btn:hover:after {
+	will-change: padding;
+}
+.tgl-ios + .tgl-btn:active {
+	box-shadow: inset 0 0 0 2em #e8eae9;
+}
+.tgl-ios + .tgl-btn:active:after {
+	padding-right: .8em;
+}
+.tgl-ios:checked + .tgl-btn {
+	background: #7fbcea;
+
+
+}
+.tgl-ios:checked + .tgl-btn:active {
+	box-shadow: none;
+}
+.tgl-ios:checked + .tgl-btn:active:after {
+	margin-left: -.8em;
+}
+
 
