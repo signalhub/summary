@@ -98,7 +98,7 @@ function createVisualization(json) {
 
     d3.select("#container")
         .append("svg:image")
-        .attr("xlink:href", "/assets/images/avatar.png")
+        .attr("xlink:href", "https://avatars0.githubusercontent.com/u/3446021?v=3&s=460")
         .attr("x", -radius/2)
         .attr("y", -radius/2)
         .attr("height", radius)
