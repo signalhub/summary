@@ -66,15 +66,18 @@ header
 	width: 100%;
 	text-align: right;
 	.pie
-		margin-bottom 1rem
+		margin-bottom: 1rem;
+		text-align: center;
+		float: left;
+		width: 50%;
+		margin-left: 20%;
 		transition: all  0.5s ease;
 		&.center
 			text-align center
+			margin: 0 auto;
+			width: 100%;
 	.desc
-		float: right
-		width 36%
 		text-align: left;
-		margin-left: 1rem;
 		&.full-static
 			width 100%
 			padding 1rem
@@ -105,15 +108,14 @@ header
 		display: inline-block;
 		vertical-align: top;
 
-@media (max-width: 500px)
+@media (max-width: 640px)
 	#chart
 		position: absolute;
 		width: 100%;
 		text-align: center;
 		.desc
-			float: right;
-			padding: .5rem;
-			width: 60%;
+			padding: .5rem 1rem;
+			width: 100%;
 			text-align: left;
 			text-overflow: ellipsis;
 			overflow: hidden;
